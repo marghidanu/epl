@@ -29,3 +29,6 @@ jobs:
         with:
           tags: "boord/epl:latest"
           platforms: linux/amd64,linux/arm64
+          push: true
+          cache-from: type=registry,ref=primeimages/primes:latest
+          cache-to: type=inline
