@@ -8,17 +8,15 @@ use Mojo::Template;
 
 getopt(
     'd|data=s' => \my $data,
-    'h|help' => \my $help,
+    'h|help'   => \my $help,
 );
 
-die extract_usage() if ($help || !(my $template = shift));
+die extract_usage() if ( $help || !( my $template = shift ) );
 
-my $output = Mojo::Template->new()
-    ->vars(1)
-    ->render_file(
-        $template,
-        defined($data) ? decode_json(path($data)->slurp()) : {}
-    );
+my $output =
+  Mojo::Template->new()->vars(1)
+  ->render_file( $template,
+    defined($data) ? decode_json( path($data)->slurp() ) : {} );
 
 print $output;
 
