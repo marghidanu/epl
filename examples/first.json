@@ -1,0 +1,13 @@
+{
+    "name": "First example",
+    "items": [
+        {
+            "name": "Peter Parker",
+            "alias": "Spider-Man"
+        },
+        {
+            "name": "Bruce Banner",
+            "alias": "The Hulk"
+        }
+    ]
+}

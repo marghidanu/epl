@@ -1,0 +1,8 @@
+# <%= $name %>
+
+<% foreach my $item (@{$items}) { %>
+## <%= $item->{name} %>
+
+The superhero name is **<%= $item->{alias} %>**
+
+<% } %>
