@@ -13,12 +13,22 @@ getopt(
 
 die extract_usage() if ( $help || !( my $template = shift ) );
 
-my $output =
-  Mojo::Template->new()->vars(1)
-  ->render_file( $template,
-    defined($data) ? decode_json( path($data)->slurp() ) : {} );
+eval {
+    die "Template file is missing (${template})\n"
+      unless ( -e $template );
 
-print $output;
+    my $args = {};
+    if ( defined($data) ) {
+        die "Data file is missing ($data)\n"
+          unless ( -e $data );
+        $args = decode_json( path($data)->slurp() );
+    }
+
+    say Mojo::Template->new( vars => 1 )->render_file( $template, $args );
+};
+
+say "Error: $@"
+  if ($@);
 
 __END__
 
