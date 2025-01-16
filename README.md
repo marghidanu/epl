@@ -4,7 +4,7 @@ CLI templating utility
 
 ## Build status
 
-[![CI](https://github.com/marghidanu/epl/actions/workflows/CI.yml/badge.svg)](https://github.com/marghidanu/epl/actions/workflows/CI.yml)
+[![CI](https://github.com/marghidanu/epl/actions/workflows/CI.yml/badge.svg?branch=master&event=push)](https://github.com/marghidanu/epl/actions/workflows/CI.yml)
 
 ## Installation
 
